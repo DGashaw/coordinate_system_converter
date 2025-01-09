@@ -4,6 +4,7 @@
   "description": "Converts rectangular(cartesian) coordinate system to polar coordinate system and vice versa",
   "main": "index.js",
   "scripts": {
+    "prepublishOnly": "npm run lint && npm test",
     "lint": "semistandard *.js",
     "test": "node ./test/test.js"
   },

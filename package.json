@@ -1,5 +1,5 @@
 {
-  "name": "coordinate_system_converter",
+  "name": "@danmanutd/coordinate_system_converter",
   "version": "1.0.0",
   "description": "Converts rectangular(cartesian) coordinate system to polar coordinate system and vice versa",
   "main": "index.js",

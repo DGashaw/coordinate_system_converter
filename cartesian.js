@@ -33,7 +33,7 @@ class Cartesian {
   }
 
   toString () {
-    return (`(${this.#xCoordinate},${this.#yCoordinate})`);
+    return (`Cartesian(${this.#xCoordinate},${this.#yCoordinate})`);
   }
 }
 

@@ -6,10 +6,10 @@ class Polar {
       throw new Error('Invalid polar coordinate value', `Type of ${angleValue} and ${resultantValue} must have a numerical value`);
     }
 
-    if (angleValue > 360 && angleValue < -360) {
-      throw new Error('Invalid angle value', `${angleValue} must have a value between, -360 <= angle <= 360 `);
+    if (angleValue > 360 && angleValue < 0) {
+      throw new Error('Invalid angle value', `${angleValue} must have a value between, 0 <= angle <= 360 `);
     }
-    this.#angle = angleValue;
+    this.#angle = angleValue; //Value of an angle should be measured anti-clockwise direction from positive x-axis
     this.#resultant = resultantValue;
     this[Symbol.toStringTag] = 'Polar';
   }
@@ -22,8 +22,8 @@ class Polar {
     if (typeof (angleValue) !== 'number') {
       throw new Error('Invalid polar coordinate value', `Type of ${angleValue} must have a numerical value`);
     }
-    if (angleValue > 360 && angleValue < -360) {
-      throw new Error('Invalid angle value', `${angleValue} must have a value between, -360 <= angle <= 360 `);
+    if (angleValue > 360 && angleValue < 0) {
+      throw new Error('Invalid angle value', `${angleValue} must have a value between, 0 <= angle <= 360 `);
     }
     this.#angle = angleValue;
   }
@@ -40,7 +40,7 @@ class Polar {
   }
 
   toString () {
-    return (`(${this.#resultant},${this.#angle})`);
+    return (`Polar(${this.#resultant},${this.#angle})`);
   }
 }
 

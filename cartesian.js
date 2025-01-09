@@ -3,8 +3,9 @@ class Cartesian {
   #yCoordinate;
   constructor (x, y) {
     if (typeof (x) !== 'number' || typeof (y) !== 'number') {
-      throw new Error('Invalid coordinate value', `Type of ${x} and ${y} must have a numerical value`);
+      throw new Error(`Invalid coordinate value; Type of ${x} and ${y} must have a numerical value`);
     }
+
     this.#xCoordinate = x;
     this.#yCoordinate = y;
     this[Symbol.toStringTag] = 'Cartesian';
@@ -16,7 +17,7 @@ class Cartesian {
 
   set xCoordinate (x) {
     if (typeof (x) !== 'number') {
-      throw new Error('Invalid coordinate value', `Type of ${x} must have a numerical value`);
+      throw new Error(`Invalid coordinate value; Type of ${x} must have a numerical value`);
     }
     this.#xCoordinate = x;
   }
@@ -27,7 +28,7 @@ class Cartesian {
 
   set yCoordinate (y) {
     if (typeof (y) !== 'number') {
-      throw new Error('Invalid coordinate value', `Type of ${y} must have a numerical value`);
+      throw new Error(`Invalid coordinate value; Type of ${y} must have a numerical value`);
     }
     this.#yCoordinate = y;
   }

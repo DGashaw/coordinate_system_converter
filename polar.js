@@ -3,13 +3,13 @@ class Polar {
   #resultant;
   constructor (resultantValue, angleValue) {
     if (typeof (angleValue) !== 'number' || typeof (resultantValue) !== 'number') {
-      throw new Error('Invalid polar coordinate value', `Type of ${angleValue} and ${resultantValue} must have a numerical value`);
+      throw new Error(`Invalid polar coordinate value; Type of ${angleValue} and ${resultantValue} must have a numerical value`);
     }
 
     if (angleValue > 360 && angleValue < 0) {
-      throw new Error('Invalid angle value', `${angleValue} must have a value between, 0 <= angle <= 360 `);
+      throw new Error(`Invalid angle value; ${angleValue} must have a value between, 0 <= angle <= 360 `);
     }
-    this.#angle = angleValue; //Value of an angle should be measured anti-clockwise direction from positive x-axis
+    this.#angle = angleValue; // Value of an angle should be measured anti-clockwise direction from positive x-axis
     this.#resultant = resultantValue;
     this[Symbol.toStringTag] = 'Polar';
   }
@@ -20,10 +20,10 @@ class Polar {
 
   set angle (angleValue) {
     if (typeof (angleValue) !== 'number') {
-      throw new Error('Invalid polar coordinate value', `Type of ${angleValue} must have a numerical value`);
+      throw new Error(`Invalid polar coordinate value; Type of ${angleValue} must have a numerical value`);
     }
     if (angleValue > 360 && angleValue < 0) {
-      throw new Error('Invalid angle value', `${angleValue} must have a value between, 0 <= angle <= 360 `);
+      throw new Error(`Invalid angle value; ${angleValue} must have a value between, 0 <= angle <= 360 `);
     }
     this.#angle = angleValue;
   }
@@ -34,7 +34,7 @@ class Polar {
 
   set resultant (resultantValue) {
     if (typeof (resultantValue) !== 'number') {
-      throw new Error('Invalid polar coordinate value', `Type of ${resultantValue} must have a numerical value`);
+      throw new Error(`Invalid polar coordinate value; Type of ${resultantValue} must have a numerical value`);
     }
     this.#resultant = resultantValue;
   }

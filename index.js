@@ -1,6 +1,6 @@
 import Cartesian from './cartesian.js';
 import Polar from './polar.js';
-import { radianToDegree, degreeToRadian } from './utility.js';
+import getQuadrant, { radianToDegree, degreeToRadian } from './utility.js';
 
 class CoordinateSystemConverter {
   static cartesianToPolar (cartesianObject) {
@@ -9,8 +9,27 @@ class CoordinateSystemConverter {
     }
     const resultant = Math.sqrt(Math.pow(cartesianObject.xCoordinate, 2) + Math.pow(cartesianObject.yCoordinate, 2));
     const radianAngle = Math.atan(cartesianObject.yCoordinate / cartesianObject.xCoordinate);
-    const angle = radianToDegree(radianAngle);
+    let angle = radianToDegree(radianAngle);
+    const quadrant = getQuadrant(cartesianObject);
 
+    switch (quadrant) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+        angle = 180 + angle;
+        break;
+      case 3:
+        angle = 270 - angle;
+        break;
+      case 4:
+        angle = 360 + angle;
+        break;
+      default:
+        console.log('Unexpected Error occured while determining the qudrant while converting Cartesian to Polar coordinate system');
+        break;
+    }
     return new Polar(resultant, angle);
   }
 

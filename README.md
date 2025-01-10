@@ -3,9 +3,9 @@ An npm package that converts rectangular(cartesian) coordinate system to polar c
 
 # **Usage Examples**  
 ```js
-import Cartesian from '../cartesian.js';
-import Polar from '../polar.js';
-import CoordinateSystemConverter from '../index.js';
+import Cartesian from './cartesian.js';
+import Polar from './polar.js';
+import CoordinateSystemConverter from './index.js';
 
 try{
     const cartesianObj = new Cartesian(3,4);
